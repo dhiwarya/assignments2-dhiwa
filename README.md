@@ -3,7 +3,7 @@ NPM : 2106657115
 
 1. How are the urls.py, views.py, models.py and HTML files connected to each other?
 
-<img width="444" alt="Screen Shot 2022-09-14 at 23 55 30" src="https://user-images.githubusercontent.com/112459921/190216058-78d311ad-cf1a-4837-a4d7-c0768aeb0b6b.png">
+![IMG_2481](https://user-images.githubusercontent.com/112459921/190280989-9dc0903d-29ad-42c7-bca6-9b28f9b2d3f7.jpg)
 Above is a diagram of connection between urls.py, views.py, models.py and template file), I will briefly explain in steps:
    a. First the request will be delivered in HTTP and through urls.py it will forward the request to views.py
    b. Second the request is sent through a connector that we know as view. Views.py or view known as business logic layer, which is basically the bridge         between model and template.
