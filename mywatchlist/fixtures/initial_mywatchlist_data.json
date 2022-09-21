@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.Mywatchlist",
+        "pk":1,
+        "fields":{
+            "watched":"Yes",
+            "title":"Game of Thrones",
+            "rating":4,
+            "release_date":"March 26, 2022",
+            "review":"A creepy first episode with a subtle introduction for the character."
+        }
+},
+{
+        "model": "mywatchlist.Mywatchlist",
+        "pk":2,
+        "fields":{
+            "watched":"Yes",
+            "title":"Star Wars: Revenge of the Sith",
+            "rating":5,
+            "release_date":"May 19, 2005",
+            "review":"A breathtaking episode with stunning CGI and choreography."
+        }
+    },
+    {
+        "model": "mywatchlist.Mywatchlist",
+        "pk":3,
+        "fields":{
+            "watched":"Yes",
+            "title": "FAte/Zero",
+            "rating": 4,
+            "release_date": "December 29, 2006",
+            "review": "A great anime for those who love a good storyline and philosopical movie."
+        }
+    },
+    {
+        "model":"mywatchlist.Mywatchlist",
+        "pk":4,
+        "fields":{
+            "watched":"No",
+            "title": "One Piece Red",
+            "rating":0,
+            "release_date": "September 21, 2022",
+            "review": "-"
+        }
+    },
+    {
+        "model":"mywatchlist.Mywatchlist",
+        "pk":5,
+        "fields":{
+            "watched": "Yes",
+            "title": "Avengers: Age of Ultron",
+            "rating": 3,
+            "release_date": "April 22,2015",
+            "review": "A good movie with a menacing super villain that have a twisted sense of Justice."
+        }
+    },
+    {
+        "model":"mywatchlist.Mywatchlist",
+        "pk":6,
+        "fields":{
+            "watched": "Yes",
+            "title": "Harry Potter: Prisioner of Azkaban",
+            "rating": 4,
+            "release_date": "June 16,2004",
+            "review": "A perfect movie for those who msytery movie."
+        }
+    },
+    {
+        "model":"mywatchlist.Mywatchlist",
+        "pk":7,
+        "fields":{
+            "watched":"No",
+            "title":"Goodfather",
+            "rating":0,
+            "release_date":"March 24,1972",
+            "review":"-"
+        }
+    },
+    {
+        "model":"mywatchlist.Mywatchlist",
+        "pk":8,
+        "fields":{
+            "watched":"Yes",
+            "title":"Attack on Titan",
+            "rating":5,
+            "release_date":"April 7,2013",
+            "review":"An amazing anime with realistic politic and diplomatic problem."
+        }
+    },
+    {
+        "model":"mywatchlist.Mywatchlist",
+        "pk":9,
+        "fields":{
+            "watched":"No",
+            "title":"Don't Look Up",
+            "rating":0,
+            "release_date":"December 10,2021",
+            "review":"-"
+        }
+    },
+    {
+        "model":"mywatchlist.Mywatchlist",
+        "pk":10,
+        "fields":{
+            "watched":"Yes",
+            "title":"Little Women",
+            "rating":4,
+            "release_date":"February 7,2020",
+            "review":"A great story about a little women dream with family and love problems."
+        }
+    }
+]
