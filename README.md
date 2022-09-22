@@ -54,6 +54,6 @@ json screenshot of postman
 HTML screenshot of postman
 <img width="1440" alt="Screen Shot 2022-09-22 at 10 42 29" src="https://user-images.githubusercontent.com/112459921/191653911-4a294d8f-21ca-4d97-a7e0-b0a5678d7a7c.png">
 
-
+Link Heroku app: https://dhiwa-assignment2.herokuapp.com/mywatchlist/
 
 
