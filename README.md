@@ -43,5 +43,17 @@ Assignment 3
       f. Furthermore, I made html file to make the design of the presentation webpage.
       e. Finally, I commit the changes into github then migrate and loaddata in heroku app.
       
+ 4. Screenshot of Postman
+
+xml screenshot of postman
+<img width="1440" alt="Screen Shot 2022-09-22 at 10 42 00" src="https://user-images.githubusercontent.com/112459921/191653765-b9917f76-9000-4bc2-8778-4618e2672015.png">
+
+json screenshot of postman
+<img width="1440" alt="Screen Shot 2022-09-22 at 10 42 16" src="https://user-images.githubusercontent.com/112459921/191653881-9e731585-8cd5-4685-8347-a72be3f1dbe2.png">
+
+HTML screenshot of postman
+<img width="1440" alt="Screen Shot 2022-09-22 at 10 42 29" src="https://user-images.githubusercontent.com/112459921/191653911-4a294d8f-21ca-4d97-a7e0-b0a5678d7a7c.png">
+
+
 
 
