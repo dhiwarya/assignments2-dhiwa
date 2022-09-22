@@ -22,3 +22,26 @@ Above is a diagram of connection between urls.py, views.py, models.py and templa
    
 Heroku application hyperlink: https://dhiwa-assignment2.herokuapp.com/katalog/
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Assignment 3
+
+1. The Difference between JSON, XML and HTML
+      a. JSON is can have a type while XML and HTML doesn't, and JSON is easier to read rather than XML and JSON
+      b. XML is pretty similar to HTML whereas XML is to stores and transfer data
+      c. HTML is a markup language that is used to display the presentation of data.
+      
+2. WHy we need data transfer?
+   Because website or application is all about sending and receiving data, the data that's being delivered is mainly in XML, HTMl and Json. In order to deliver the data we need data delivery to send the data from one stack to another.
+   
+3. Steps how I did this assignment
+      a. First thing I did was made the mywatchlist folder using python manage.py startapp mywatchlist
+      b. After that, I add mywatchlist into the urls and setting file in project_django
+      c. Next, I migrate to send the data into the database
+      d. And then, I made a function to in views.py and then route it to urls.py 
+      e. Moreover, I made json file that contains the information too fill up the models.py then loaddata the json file.
+      f. Furthermore, I made html file to make the design of the presentation webpage.
+      e. Finally, I commit the changes into github then migrate and loaddata in heroku app.
+      
+
+
