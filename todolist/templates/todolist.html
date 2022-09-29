@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% block meta %}
+<title>Your Todolist</title>
+{% endblock meta %}
+
+<div class = "login_user">
+
+    <h1>Username: {{username}}</h1>
+
+    {% if user_todolist %}
+        <table>
+            <tr>
+                <th>Time and Date</th>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+            {% for list in user_todolist %}
+            <tr>
+                <th>{{list.date}}</th>
+                <th>{{list.title}}</th>
+                <th>{{list.description}}</th>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h1>You haven't made any task</h1>
+    {% endif %}
+
+
+<button><a href="{% url 'todolist:logout_user' %}">Logout</a></button>
+<button><a href="{% url 'todolist:create_task' %}">Add another task</a></button>
+</div>
+
+{% endblock content %}
