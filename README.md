@@ -1,6 +1,8 @@
 Name: Dhiwa Arya Kusumah
 NPM : 2106657115
 
+Assignment 2
+
 1. How are the urls.py, views.py, models.py and HTML files connected to each other?
 
 ![IMG_2481](https://user-images.githubusercontent.com/112459921/190280989-9dc0903d-29ad-42c7-bca6-9b28f9b2d3f7.jpg)
@@ -56,4 +58,38 @@ HTML screenshot of postman
 
 Link Heroku app: https://dhiwa-assignment2.herokuapp.com/mywatchlist/
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Assignment 4
+
+1. What does {% csrf_token %} do in the <form> element? What happens if there is no such "code snippet" in the <form> element?
+=> csrf_token(Cross Site Request Forgery) which is a protection to protect from csrf attack, and a code without this snippet would result in a vulnerable to csrf attack
+   
+2. Can we create the <form> element manually (without using a generator like {{ form.as_table }})? Explain generally how to create <form> manually.
+=> Yes and the steps is:
+   a. Make a form with <form> tag
+   b. Make a table inside of that form
+   c. The element will be in rows inside that form
+   
+ 3. Describe the data flow process from the submission made by the user through the HTML form, data storage in the database, until the appearance of the data that has been stored in the HTML template.
+=> a. User made a HTTP request
+   b. Server receive that request, decide the function that will be used and then present the display
+   c. User made another input that will be send in request
+   d.The input will be processed and stored based on the objects in models
+   e. Server then return the request in form of template that will be displayed
+   
+4. Explain how you implement the checklist above.
+=> a. Create a new app named todolist
+   b. Add a new app in INSTALLED_APPS in settings.py and then create a path in urls.oy
+   c. Create a models that contain the object for the application
+   d. Fill up the views, urls, and template
+   e. Migrate and runserver to check if it's already properly done
+   f. After that, commit the changes and then push it to github.
+   g. Deploy the application in heroku
+   
+Hero's link:
+   https://dhiwa-assignment2.herokuapp.com/todolist/
+   https://dhiwa-assignment2.herokuapp.com/todolist/login-user
+   https://dhiwa-assignment2.herokuapp.com/todolist/register
+   https://dhiwa-assignment2.herokuapp.com/todolist/create-task
+   
