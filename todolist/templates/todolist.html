@@ -1,37 +1,201 @@
 {% extends 'base.html' %}
 
-{% block content %}
-
 {% block meta %}
 <title>Your Todolist</title>
 {% endblock meta %}
 
-<div class = "login_user">
+{% block content %}
 
-    <h1>Username: {{username}}</h1>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    {% if user_todolist %}
-        <table>
-            <tr>
-                <th>Time and Date</th>
-                <th>Title</th>
-                <th>Description</th>
-            </tr>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #272727;
+}
+
+.main-container {
+  padding: 30px;
+}
+
+/* HEADING */
+
+.heading {
+  text-align: center;
+}
+
+.heading__title {
+  font-weight: 600;
+  color:whitesmoke
+}
+
+.heading__credits {
+  margin: 10px 0px;
+  color: #888888;
+  font-size: 25px;
+  transition: all 0.5s;
+}
+
+.heading__link {
+  text-decoration: none;
+}
+
+.heading__credits .heading__link {
+  color: inherit;
+}
+
+/* CARDS */
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  margin: 20px;
+  padding: 20px;
+  width: 500px;
+  min-height: 200px;
+  display: grid;
+  grid-template-rows: 20px 50px 1fr 50px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+.card__link,
+.card__exit,
+.card__icon {
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card__link::after {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.5s;
+}
+
+.card__link:hover::after {
+  width: 100%;
+}
+
+.card__exit {
+  grid-row: 1/2;
+  justify-self: end;
+}
+
+.card__icon {
+  grid-row: 2/3;
+  font-size: 30px;
+}
+
+.card__title {
+  grid-row: 3/4;
+  font-weight: 400;
+  color: #2e2e2e;
+}
+.card__date {
+  grid-row: 3/4;
+  font-weight: 400;
+  color: #2e2e2e;
+}
+.card__desc {
+  grid-row: 3/4;
+  font-weight: 400;
+  color: #2e2e2e;
+}
+
+.card__apply {
+  grid-row: 4/5;
+  align-self: center;
+}
+
+/* CARD BACKGROUNDS */
+
+.card-1 {
+  background: radial-gradient(#ffffff, #3f3f3f);
+}
+.logout_button {
+    background-color:rgb(126, 126, 126);
+    margin:5px;
+    text-align: right
+}
+.add_button {
+    background-color: rgb(126, 126, 126);
+    margin:5px;
+    text-align: right
+}
+a {
+    color:whitesmoke
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1600px) {
+  .cards {
+    justify-content: center;
+  }
+}
+</style>
+
+<body>
+    <div class = "login_user">
+        {% if user_todolist %}
+        <div class="main-container">
+            <div class="heading">
+              <h1 class="heading__title">Hello, {{username}}</h1>
+              <p class="heading__credits"><a class="heading__link" target="_blank" href="https://dribbble.com/sl">This is your todolist</a></p>
+            </div>
             {% for list in user_todolist %}
-            <tr>
-                <th>{{list.date}}</th>
-                <th>{{list.title}}</th>
-                <th>{{list.description}}</th>
-            </tr>
+            <div class="cards">
+              <div class="card card-1">
+                <div class="card__icon"><i class="fas fa-bolt"></i></div>
+                <p class="card__exit"><i class="fas fa-times"></i></p>
+                <h2 class="card__title">{{list.title}}</h2>
+                <h3 class="card__date">{{list.date}}</h2>
+                <h3 class="card__desc">{{list.description}}</h2>
+                <p class="card__apply">
+                  <a class="card__link" href="#">More info <i class="fas fa-arrow-right"></i></a>
+                </p>
+              </div>
+            </div>
             {% endfor %}
-        </table>
-    {% else %}
-        <h1>You haven't made any task</h1>
-    {% endif %}
+          </div>
+        {% else %}
+            <h1 class="handle">You haven't made any task</h1>
+        {% endif %}
+    
+        <button class="logout_button"><a href ="{% url 'todolist:logout_user' %}">Logout</a></button>
+        <button class="add_button"><a href="{% url 'todolist:create_task' %}">Add another task</a></button>
+       
+    </div>
+    <!--- <h5>Last Login: {{ last_login }}</h5>
+    <div class="container">
+        <div class="buttons" >
+            <a href="{% url 'todolist:logout_user' %}" class="button1" target="_blank" rel="noopener">Logout</a>
+        </body>
+        </div>
+    </div> -->
+    
+    {% endblock content %}
+</body>
 
-
-<button><a href="{% url 'todolist:logout_user' %}">Logout</a></button>
-<button><a href="{% url 'todolist:create_task' %}">Add another task</a></button>
-</div>
-
-{% endblock content %}
+<!-- Cards template link: https://codepen.io/ericmahoney/pen/oNLMOYw -->
