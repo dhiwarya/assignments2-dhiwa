@@ -93,3 +93,37 @@ Hero's link:
    https://dhiwa-assignment2.herokuapp.com/todolist/register
    https://dhiwa-assignment2.herokuapp.com/todolist/create-task
    
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+   Assignment 5
+   
+1.  What is the difference between Inline, Internal, and External CSS? What are the advantages and disadvantages of each style?
+    - Inline CSS: An inline CSS is used to apply a unique style to a single HTML element. An inline CSS uses the style attribute of an HTML element.
+    - Internal CSS: Internal CSS is a form of CSS using which you can add CSS to HTML documents. It helps to design the layout of a single HTML web page       and change the styles of a web page within HTML code.
+    - External CSS:An external style sheet is a separate CSS file that can be accessed by creating a link within the head section of the webpage.             Multiple webpages can use the same link to access the stylesheet. The link to an external style sheet is placed within the head section of the           page.
+
+2. Describe the HTML5 tags that you know.
+   div, a tag to make blok for html elements
+   a, a tag for hyperlink
+   meta, containing the metadata for html website
+   span, to change the style of certain text.
+   form, to make a form
+   table,to make a table
+   title, to contain a title of a website
+   img, insert a an image
+   style, make an internal css
+   script, to make a website more instersting
+   p, make a paragraph
+   h1, h2, h3, h4, h5, h6, make a heading
+   
+3. Describe the types of CSS selectors you know.
+   element, select certain elements
+   .class-name, choose an element that has class name
+   #id, choose an element that have id
+   *, pick all element
+   .class1, .class2, ..., Pick an element for a selector
+   element .class-name, pick a certain element with class-name
+   :hover, style when the cursor hover
+   :active, style when the link is clicked
+   
+4.  Explain how you would implement the checklist above.
+   In this assignment I only work with HTML and CSS without bootstrap, first I design the login, register, todolist and create-task using CSS. I used the online template to make the website more attractive, after that I add commit then push to github.
