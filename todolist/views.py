@@ -1,9 +1,10 @@
 import datetime
 from django.urls import reverse
+from django.core import serializers
 from todolist.forms import TaskForm
 from django.contrib import messages
 from todolist.models import Task
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -41,6 +42,10 @@ def logout_user(request):
     logout(request)
     return redirect('todolist:login_user')
 
+def show_json(request):
+    data = Task.objects.all()
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
 @login_required(login_url='/todolist/login-user/')
 def todolist(request):
     data_todolist = Task.objects.all()
@@ -69,7 +74,7 @@ def create_task(request):
     # when requesting 
     return render(request, 'create_task.html', {'form': form})
 
-@login_required(login_url='/todolist/login/') # login first before doing this
+@login_required(login_url='/todolist/login-user/') # login first before doing this
 def refresh(request, id):
     task = Task.objects.get(user = request.user, pk = id)
     task.is_finished = not task.is_finished
