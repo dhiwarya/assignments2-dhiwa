@@ -12,6 +12,7 @@ from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 
+#-----------------------------Authentication/Authorization--------------------------------------#
 def register(request):
     form = UserCreationForm()
 
@@ -32,7 +33,7 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('todolist:todolist')
+            return redirect('todolist:show_todolist')
         else:
             messages.info(request, 'Wrong Username or Password!')
     context = {}
@@ -41,13 +42,11 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return redirect('todolist:login_user')
+#---------------------------------------------------------------------------------------------#
 
-def show_json(request):
-    data = Task.objects.all()
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
-
+#---------------------------------AJAX Implementation-----------------------------------------#
 @login_required(login_url='/todolist/login-user/')
-def todolist(request):
+def show_todolist(request):
     data_todolist = Task.objects.all()
     user_todolist = []
     name = request.user.username
@@ -69,11 +68,17 @@ def create_task(request):
             form_check = form.save(commit=False)
             form_check.user = request.user
             form_check.save()
-            return HttpResponseRedirect(reverse('todolist:todolist'))
+            return HttpResponseRedirect(reverse('todolist:show_todolist'))
     
     # when requesting 
     return render(request, 'create_task.html', {'form': form})
 
+def show_json(request):
+    task = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", task), content_type="application/json")
+#----------------------------------------------------------------------------------------------#
+
+#-----------------------------------------DELETE/REFRESH---------------------------------------#
 @login_required(login_url='/todolist/login-user/') # login first before doing this
 def refresh(request, id):
     task = Task.objects.get(user = request.user, pk = id)
@@ -86,3 +91,4 @@ def delete(request, id):
     task = Task.objects.get(user = request.user, pk = id)
     task.delete()
     return redirect('todolist:show_todos')
+#---------------------------------------------------------------------------------------------#
