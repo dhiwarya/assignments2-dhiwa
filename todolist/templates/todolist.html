@@ -5,28 +5,34 @@
   <title>Your todolist</title>
   {% endblock meta %}
 </head>
+<style>
+    * {
+        background: rgb(0,0,0);
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(18,9,121,1) 100%);
+    }
+</style>
 
  {% block content %}
-<div class="todolist-container p-6 m-5 bg-slate-700	 border-gray-700 border-b rounded">
+<div class="todolist-container p-6 m-5 bg-[#1e293b] border-gray-700 border-b rounded">
     
-    <div class="header lg:text-2xl sm:text-xl font-bold text-slate-300">
+    <div class="header lg:text-2xl sm:text-xl font-bold text-[#e2e8f0]">
         <h1>{{user}}'s to-do list </h1>
     </div>
 
         <div class="container d-flex flex-wrap flex-row " id= "card-container"> </div>
 
 <!-- Modal -->
-<div class="modal fade bg-gray-500" id="modalForm" role="dialog">
+<div class="modal fade bg-[#0f172a]" id="modalForm" role="dialog">
     <div class="modal-dialog">
-        <div class="modal-content bg-blue-400">
+        <div class="modal-content bg-[#1e293b]">
             <!-- Modal Header -->
             <div class="modal-header
                         ">
-                <button type="button" class="close" data-bs-dismiss="modal">
+                <button type="button" class="close p-1 m-1 bg-orange-600 rounded" data-bs-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                     <span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title font-bold" id="myModalLabel">Add Task</h4>
+                <h4 class="modal-title font-bold text-[#e2e8f0]" id="myModalLabel">Add Task</h4>
             </div>
             
             <!-- Modal Body -->
@@ -34,12 +40,12 @@
                 <p class="statusMsg"></p>
                 <form role="form" id="taskForm" action="/todolist/add/" method="POST">
                     {% csrf_token %}
-                    <div class="form-group">
-                        <label for="inputTitle">Title</label>
+                    <div class="form-group p-2 m-2">
+                        <label for="inputTitle" class="text-[#e2e8f0]">Title</label>
                         <input type="text" class="form-control w-100" id="inputTitle" name='title' placeholder="Enter task title"/>
                     </div>
-                    <div class="form-group">
-                        <label for="inputDescription">Description</label>
+                    <div class="form-group p-2 m-2">
+                        <label for="inputDescription" class="text-[#e2e8f0]">Description</label>
                         <textarea class="form-control" id="inputDescription" name='description' placeholder="Enter your description"></textarea>
                     </div>
                 </form>
@@ -47,8 +53,8 @@
             
             <!-- Modal Footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-default h-25" data-bs-dismiss="modal">Close</button>
-                <button type="submit" onclick = "submitForm()" class="btn btn-primary submitBtn h-25" id="submit">Submit</button>
+                <button type="button" class="btn btn-default h-25 bg-orange-600 group-hover:bg-blue-600" data-bs-dismiss="modal">Close</button>
+                <button type="submit" onclick = "submitForm()" class="btn btn-primary submitBtn h-25 bg-orange-600" id="submit">Submit</button>
             </div>
         </div>
     </div>
