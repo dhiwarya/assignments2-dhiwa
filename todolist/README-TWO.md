@@ -27,17 +27,17 @@ Event-driven programming is the dominant paradigm used in GUIs and other applica
 
 ## 4. Explain how you would implement the checklist above.
 1. Create a new function into the views that allows it to return the data in json.
-'''ruby
+```
 def show_json(request):
     task = Task.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize("json", task), content_type="application/json")
-'''
+```
 2. Add a new path for show_json
-'''ruby
+```ruby
  path('json/', show_json, name='show_json'),
-'''
+```
 3. Make a function to get the task to todolist.html
-'''ruby
+```ruby
 function showJson(){
         $.get("/todolist/json/", function(data){
             for(i = 0; i < data.length; i++){
@@ -45,9 +45,9 @@ function showJson(){
             }
         })
     }
-'''
+```
 4. Create a new create-task function for AJAX
-'''ruby
+```ruby
 def create_task_ajax(request):
      if request.method == 'POST':
         title = request.POST.get('title')
@@ -58,13 +58,13 @@ def create_task_ajax(request):
         item = Task(title=title, description=description, user=user, date=date, is_finished=is_finished)
         item.save()
         return JsonResponse({"Message": "Task Success"},status=200)
-'''
+```
 5. Add new path for create_task_ajax
-'''ruby
+```ruby
  path('create/', create_task_ajax, name = 'create_task_ajax'),
-'''
+```
 6. Write a function in javascript that connects the modal to the create path and then allows it to be processed asynchronously
-'''ruby
+```ruby
 function makeCards(){
         let text= "";
         $.ajax({
@@ -122,5 +122,5 @@ function makeCards(){
             return false;
         
     }
-'''
+```
 
