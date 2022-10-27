@@ -18,7 +18,7 @@ In an event-driven programming paradigm, entities (such as objects, services, an
 Event-driven programming is the dominant paradigm used in GUIs and other applications (eg, JavaScript web applications) that is centered on performing certain actions in response to user input. For example in the implementation of this task, namely the "Create Task" button.
 
 ## 3. Describe the implementation of asynchronous programming in AJAX.
-1. Use <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> inside of base.html or header html.
+1. Use ```<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>``` inside of base.html or header html.
 2. Add <script> inside html file to implement javascript.
 3. Write AJAX syntax using JQuert in your script.
 4. AJAX will listen to every request and response.
@@ -27,7 +27,7 @@ Event-driven programming is the dominant paradigm used in GUIs and other applica
 
 ## 4. Explain how you would implement the checklist above.
 1. Create a new function into the views that allows it to return the data in json.
-```
+```ruby
 def show_json(request):
     task = Task.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize("json", task), content_type="application/json")
