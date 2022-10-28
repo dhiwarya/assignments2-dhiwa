@@ -70,7 +70,7 @@ def create_task(request):
             new_task.save()
         return HttpResponseRedirect(reverse("todolist:show_todolist"))
     context = {'form': form}
-    return render(request, 'create-task.html', context)
+    return render(request, 'create_task.html', context)
 
 #---------------------------------AJAX Implementation-----------------------------------------#
 def create_task_ajax(request):
