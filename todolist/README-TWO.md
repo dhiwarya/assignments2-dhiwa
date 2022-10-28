@@ -4,7 +4,7 @@ Dhiwa Arya Kusumah
 
 ## Assignment 6 - Javascript and AJAX
 ### Deployment Link
-https://dhiwa-assignment2.herokuapp.com/todolist/
+(https://weekly-assignment-django.herokuapp.com/todolist/)
 
 ## Describe the difference between asynchronous programming with synchronous programming.
 #### Asyncrhonus
