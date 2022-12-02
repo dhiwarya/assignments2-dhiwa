@@ -3,7 +3,7 @@
         "model": "mywatchlist.Mywatchlist",
         "pk":1,
         "fields":{
-            "watched":"Yes",
+            "watched":true,
             "title":"Game of Thrones",
             "rating":4,
             "release_date":"March 26, 2022",
@@ -14,7 +14,7 @@
         "model": "mywatchlist.Mywatchlist",
         "pk":2,
         "fields":{
-            "watched":"Yes",
+            "watched":true,
             "title":"Star Wars: Revenge of the Sith",
             "rating":5,
             "release_date":"May 19, 2005",
@@ -25,7 +25,7 @@
         "model": "mywatchlist.Mywatchlist",
         "pk":3,
         "fields":{
-            "watched":"Yes",
+            "watched":true,
             "title": "FAte/Zero",
             "rating": 4,
             "release_date": "December 29, 2006",
@@ -36,7 +36,7 @@
         "model":"mywatchlist.Mywatchlist",
         "pk":4,
         "fields":{
-            "watched":"No",
+            "watched":false,
             "title": "One Piece Red",
             "rating":0,
             "release_date": "September 21, 2022",
@@ -47,7 +47,7 @@
         "model":"mywatchlist.Mywatchlist",
         "pk":5,
         "fields":{
-            "watched": "Yes",
+            "watched": false,
             "title": "Avengers: Age of Ultron",
             "rating": 3,
             "release_date": "April 22,2015",
@@ -58,7 +58,7 @@
         "model":"mywatchlist.Mywatchlist",
         "pk":6,
         "fields":{
-            "watched": "Yes",
+            "watched": true,
             "title": "Harry Potter: Prisioner of Azkaban",
             "rating": 4,
             "release_date": "June 16,2004",
@@ -69,7 +69,7 @@
         "model":"mywatchlist.Mywatchlist",
         "pk":7,
         "fields":{
-            "watched":"No",
+            "watched":false,
             "title":"Goodfather",
             "rating":0,
             "release_date":"March 24,1972",
@@ -80,7 +80,7 @@
         "model":"mywatchlist.Mywatchlist",
         "pk":8,
         "fields":{
-            "watched":"Yes",
+            "watched":true,
             "title":"Attack on Titan",
             "rating":5,
             "release_date":"April 7,2013",
@@ -91,7 +91,7 @@
         "model":"mywatchlist.Mywatchlist",
         "pk":9,
         "fields":{
-            "watched":"No",
+            "watched":false,
             "title":"Don't Look Up",
             "rating":0,
             "release_date":"December 10,2021",
@@ -102,7 +102,7 @@
         "model":"mywatchlist.Mywatchlist",
         "pk":10,
         "fields":{
-            "watched":"Yes",
+            "watched":true,
             "title":"Little Women",
             "rating":4,
             "release_date":"February 7,2020",
